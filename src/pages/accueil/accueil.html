@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="appbase">
+    <ion-title>
+      Liste des clients
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="Refresh()">
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="Insert()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!--<ion-searchbar color="appbase" (input)="search($event, searchKey)">
+  </ion-searchbar> -->
+
+  <ion-list>
+    <ion-item *ngFor="let client of listeclients">
+      <ion-item (click)="Viewperson(client)">
+
+        <h2>{{client.nomEntrepriseClient}}</h2>
+
+      </ion-item>
+
+    </ion-item>
+  </ion-list>
+</ion-content>

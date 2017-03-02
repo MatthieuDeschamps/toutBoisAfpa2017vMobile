@@ -1,0 +1,42 @@
+<!--
+  Generated template for the ListeCommandes page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>liste Commandes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let commande of listeCommande">  <!--ligne à supprimer -->
+      <ion-card>
+        <ion-card-content>
+          <ion-card-title>
+            <h1> Commande n° {{commande.id_commande}}</h1>
+          </ion-card-title>
+          <ion-list>
+            <button ion-item>
+              <ion-icon name="calendar" item-left></ion-icon>
+              {{commande.dateCommande}}
+            </button>
+
+            <button ion-item>
+              <ion-icon name="home" item-left></ion-icon>
+              {{commande.numVoieClient}}, {{commande.adresseClient}}
+              {{commande.villeClient}} {{commande.codePostalClient}}
+              {{commande.paysClient}}
+            </button>
+
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>

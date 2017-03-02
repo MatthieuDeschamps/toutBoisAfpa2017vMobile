@@ -1,0 +1,81 @@
+<!--
+  Generated template for the Person page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="appbase">
+    <ion-title>{{user.nomEntrepriseClient}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+
+
+  <ion-card>
+
+    <img src="{{url}}{{user.logoClient}}"/>
+    <ion-card-content>
+      <ion-card-title>
+        <h1> {{user.nomEntrepriseClient}}</h1>
+        <h2>Siret : {{user.siretClient}}</h2>
+      </ion-card-title>
+
+      <ion-list>
+        <button ion-item>
+          <ion-icon name="contact" item-left></ion-icon>
+          {{user.nomClient}} {{user.prenomClient}}
+        </button>
+        <button ion-item>
+          <ion-icon name="mail" item-left></ion-icon>
+          {{user.mailClient}}
+        </button>
+        <button ion-item>
+          <ion-icon name="call" item-left></ion-icon>
+          {{user.numeroTelClient}}
+        </button>
+        <button ion-item>
+          <ion-icon name="home" item-left></ion-icon>
+          {{user.numVoieClient}}, {{user.adresseClient}},  {{user.villeClient}}  {{user.paysClient}}
+        </button>
+      </ion-list>
+      <ion-card-title>
+        <h1> Représentant</h1>
+      </ion-card-title>
+      <ion-list>
+        <button ion-item>
+          <ion-icon name="contact" item-left></ion-icon>
+          {{user.prenomRepresentant}} {{user.nomRepresentant}}
+        </button>
+        <button ion-item>
+          <ion-icon name="mail" item-left></ion-icon>
+          {{user.mailRepresentant}}
+        </button>
+        <button ion-item>
+          <ion-icon name="call" item-left></ion-icon>
+          {{user.numerotelRepresentant}}
+        </button>
+      </ion-list>
+
+
+
+    </ion-card-content>
+  </ion-card>
+  <button ion-button block icon-left (click)="ViewCommande()">
+    <ion-icon name="cart"></ion-icon>
+    Liste des commandes
+  </button>
+
+</ion-content>
+
+
