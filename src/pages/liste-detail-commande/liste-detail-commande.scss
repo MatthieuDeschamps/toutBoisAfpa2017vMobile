@@ -1,0 +1,57 @@
+page-liste-detail-commande {
+
+  .card-background-page {
+
+    background-color: #69717d;
+
+    ion-card {
+      top: 5px;
+      position: absolute;
+      text-align: center;
+    }
+    .card-main{
+      padding-top: 10px;
+      // margin-top: 10px;
+    }
+    .card-title {
+      font-size: 2.0em;
+      width: 100%;
+      font-weight: bold;
+
+      color: #fff;
+      background-color: #69717d;
+
+    }
+    .card-subtitle {
+      font-size: 1.4em;
+      width: 100%;
+      color: #fff;
+      background-color: #69717d;
+    }
+    .card-BasDePage{
+      margin-top: 20px;
+      margin-bottom: 5px;
+      padding-left: 5%;
+      padding-right: 5%;
+      color: #69717d;
+    }
+    .card-paragraphe {
+      font-size: 1.0em;
+      padding-left: 5%;
+      padding-right: 5%;
+      width: 100%;
+      color: #4d4d4d;
+    }
+    .card-codeProduit{
+      font-size: 1.0em;
+      width: 100%;
+      color: #4d4d4d;
+    }
+    .slide-image {
+      width: 70%;
+      height: 70%;
+      margin: auto;
+    }
+  }
+
+}

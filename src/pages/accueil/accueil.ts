@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams,LoadingController  } from 'ionic-angular';
 import {DataClients} from "../../providers/DataClients";
 import { ClientPage } from "../client/client";
-import {ListeCommandesPage} from "../liste-commandes/liste-commandes";
+//import {ListeCommandesPage} from "../liste-commandes/liste-commandes";
+import {LoginPage} from "../login/login";
 //import { InsertPage } from "../insert/insert";
 //import { UpdatePage } from "../update/update";
 
@@ -12,17 +13,22 @@ import {ListeCommandesPage} from "../liste-commandes/liste-commandes";
   templateUrl: 'accueil.html'
 })
 export class Accueil {
-  listeclients: Array<any>;
-  loader: any;
 
-  constructor(public navCtrl: NavController, public data:DataClients, public navParams:NavParams, public loadingCtrl:LoadingController) {
+  listeclients  : Array<any>;
+  loader        : any;
+
+  constructor(public navCtrl: NavController,
+              public dataClient:DataClients,
+              public navParams:NavParams,
+              public loadingCtrl:LoadingController)
+  {
 
   }
 
   ngOnInit()
   {
     this.presentLoading();
-    this.data.LoadClients().subscribe(
+    this.dataClient.LoadClients().subscribe(
       data => {
         this.listeclients = data;
         console.log(data);
@@ -35,7 +41,7 @@ export class Accueil {
     );
   }
 
-  Refresh()
+  /*Refresh()
   {
     this.presentLoading();
     this.data.LoadClients().subscribe(
@@ -49,12 +55,16 @@ export class Accueil {
       },
       () => console.log('Actualisation clients ok')
     );
-  }
+  }*/
 
   Viewperson(client)
   {
     this.navCtrl.push(ClientPage,{client:client});
 
+  }
+
+  goBack(){
+    this.navCtrl.push(LoginPage);
   }
 
 

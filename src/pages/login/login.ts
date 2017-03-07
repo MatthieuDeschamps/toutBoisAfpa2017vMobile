@@ -3,7 +3,7 @@ import {NavController, AlertController, LoadingController} from 'ionic-angular';
 import {Http, Response} from "@angular/http";
 import 'rxjs/add/operator/map';
 import { Accueil } from "../accueil/accueil";
-import {ClientPage} from "../client/client";
+
 
 /*
  Generated class for the Login page.
@@ -28,10 +28,10 @@ export class LoginPage {
   }
 
   login(){
-    let username = this.data.userClient;
-    let password = this.data.mdpClient;
+    let username = this.data.username;
+    let password = this.data.password;
     let data = JSON.stringify({username, password});
-    let link = "http://localhost/toutboisPhpMobile/loglucoV/login.php?userClient=" + username + "&mdpClient=" + password;
+    let link = "http://matthieudeschamps.be/toutboisMobile/login.php";
 
 
     this.http.post(link, data)

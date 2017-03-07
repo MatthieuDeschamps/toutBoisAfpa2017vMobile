@@ -5,33 +5,51 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
     <ion-title>liste Commandes</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let commande of listeCommande">  <!--ligne à supprimer -->
+    <ion-item *ngFor="let commande of listeCommandes">  <!--ligne à supprimer -->
+
+     <!-- <ion-row>
+        <ion-col><ion-icon name="ionic" color="primary">
+
+          {{commande.dateCommande | date:'dd-MM-y'}} à {{commande.dateCommande | date:'HH:mm'}}
+          {{commande.libelle_EtatCommande}}
+        </ion-col>
+      </ion-row>-->
+
       <ion-card>
         <ion-card-content>
           <ion-card-title>
-            <h1> Commande n° {{commande.id_commande}}</h1>
+            <h1 ion-item >
+             <!-- <ion-icon name="calendar" item-left></ion-icon> -->
+              Commande n° {{commande.id_commande}}
+            </h1>
           </ion-card-title>
+         <!-- <ion-icon name="calendar" item-left> Statut commande </ion-icon>-->
           <ion-list>
-            <button ion-item>
+            <div ion-item>
               <ion-icon name="calendar" item-left></ion-icon>
-              {{commande.dateCommande}}
-            </button>
-
+              {{commande.dateCommande | date:'dd-MM-yy'}} à {{commande.dateCommande | date:'HH:mm'}}
+            </div>
             <button ion-item>
               <ion-icon name="home" item-left></ion-icon>
               {{commande.numVoieClient}}, {{commande.adresseClient}}
               {{commande.villeClient}} {{commande.codePostalClient}}
               {{commande.paysClient}}
+            </button>
+            <button ion-item>
+              <ion-icon name="home" item-left></ion-icon>
+              {{commande.libelle_EtatCommande}}
+            </button>
+
+            <button ion-button color="dark" clear (click)="ViewCommandeDetail(commande)">
+              Détail
             </button>
 
           </ion-list>

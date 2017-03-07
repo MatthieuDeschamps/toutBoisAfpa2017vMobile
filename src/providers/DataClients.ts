@@ -16,8 +16,8 @@ export class DataClients {
   }
 
   LoadClients() {
-    var url = "http://localhost/toutboisPhpMobile/loglucoV/";
-    var response = this.http.get(url+"detailClient.php").map(res => res.json());
+    var url = "http://matthieudeschamps.be/toutboisMobile/detailClient.php";
+    var response = this.http.get(url).map(res => res.json());
     return response;
   }
 /*

@@ -18,10 +18,25 @@ export class DataCommande {
   }
 
   chargerListeCommande(idC){
-    var url = "http://localhost/toutboisPhpMobile/loglucoV/";
+    var url = "http://matthieudeschamps.be/toutboisMobile/";
     var response = this.http.get(url+"listeCommandeIdCli.php?idClient="+idC).map(res => res.json());
+    console.log('datacommande  numero de Client = '+ idC);
     //var response = this.http.get(url+"listeCommandeIdCli.php?idClient="+idC).map(res => res.json());
     return response
+
   }
+
+  chargerDetailCommande(idCommande){
+    var url = "http://matthieudeschamps.be/toutboisMobile/";
+    var response = this.http.get(url+"detailCommandeIdCommande.php?idCommande="+idCommande).map(res => res.json());
+    console.log('datacommande  numero de Commande = '+ idCommande);
+    return response
+  }
+
+
+
+
+
+
 
 }

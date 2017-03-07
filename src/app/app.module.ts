@@ -7,6 +7,8 @@ import { ClientPage } from "../pages/client/client";
 import { DataClients } from "../providers/DataClients";
 import {ListeCommandesPage} from "../pages/liste-commandes/liste-commandes";
 import {DataCommande} from "../providers/data-commande";
+import {ListeDetailCommandePage} from "../pages/liste-detail-commande/liste-detail-commande";
+import {MapPage} from "../pages/map/map";
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import {DataCommande} from "../providers/data-commande";
     Accueil,
     LoginPage,
     ClientPage,
-    ListeCommandesPage
+    ListeCommandesPage,
+    ListeDetailCommandePage,
+    MapPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -25,11 +29,14 @@ import {DataCommande} from "../providers/data-commande";
     Accueil,
     LoginPage,
     ClientPage,
-    ListeCommandesPage
+    ListeCommandesPage,
+    ListeDetailCommandePage,
+    MapPage,
 
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},
     DataClients,
-    DataCommande]
+    DataCommande,
+  ]
 })
 export class AppModule {}
